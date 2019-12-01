@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+import Table from 'react-bootstrap/Table';
 
 class Producto extends React.Component {
     constructor(props) {
@@ -15,8 +17,8 @@ class Producto extends React.Component {
   
     mostrarTabla() {
       return (
-        <div>
-          <table border="1">
+        <Container>
+          <Table variant="dark"bordered hover>
             <thead>
               <tr>
                 <th>Codigo</th>
@@ -47,8 +49,8 @@ class Producto extends React.Component {
                 );
               })}
             </tbody>
-          </table>
-        </div>
+          </Table>
+        </Container>
       );
     }
   

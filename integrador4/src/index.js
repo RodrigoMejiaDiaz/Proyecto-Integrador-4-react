@@ -4,8 +4,10 @@ import * as serviceWorker from './serviceWorker';
 import Logo from "./logo.png";
 import './index.css';
 import ImgCar1 from './carrousel1.png';
-
+import $ from 'jquery';
+import Popper from 'popper.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Table from 'react-bootstrap/Table';
@@ -117,15 +119,6 @@ const PaginaPrincipal = () =>
     <div>
         <Navegacion/>
         <Carrousel/>
-        <script src="https://unpkg.com/react/umd/react.production.min.js" crossorigin />
-        <script
-          src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"
-          crossorigin
-        />
-        <script
-          src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js"
-          crossorigin
-        />
     </div>;
 
 ReactDOM.render(

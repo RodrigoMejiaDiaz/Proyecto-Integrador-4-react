@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
-import './index.css';
 import $ from 'jquery';
 import Popper from 'popper.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -48,18 +47,15 @@ import Carrousel from './componentes/Carousel';
     }
   }*/
 
-const PaginPrincipal = () => (
+const PaginaPrincipal = () => (
   <Fragment>
     <Navegacion/>
     <Carrousel/>
-    <Container>
-      <Navegacion/>
-    </Container>
   </Fragment>
 );
 
 ReactDOM.render(
-    <PaginPrincipal />,
+    <PaginaPrincipal />,
     document.getElementById('root')
 );
 

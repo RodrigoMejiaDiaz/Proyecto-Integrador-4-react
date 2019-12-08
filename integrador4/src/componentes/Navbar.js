@@ -1,11 +1,10 @@
 import React from 'react';
 import Logo from "../logo.png";
-import { Navbar, Nav, Container, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 
 const Navegacion = () => (
           <div className="sticky-top">
             <Navbar expand="lg" fixed="top" bg="light">
-                <Container>
                     <Navbar.Brand className="text-info text-break">
                         <img 
                             src={Logo}
@@ -28,7 +27,6 @@ const Navegacion = () => (
                             <Button variant="outline-primary">Buscar</Button>
                         </Form>
                     </Navbar.Collapse>
-                </Container>
             </Navbar>
           </div>
 

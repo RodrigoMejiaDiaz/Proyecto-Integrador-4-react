@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
+import {Route, Link, BrowserRouter as Router, Switch} from 'react-router-dom'
 import $ from 'jquery';
 import Popper from 'popper.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -8,7 +9,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import {Container, Col} from 'react-bootstrap';
 
 import Navegacion from './componentes/Navbar';
-import Carrousel from './componentes/Carousel';
+import App from './App';
 
 
 /*class Producto extends React.Component {
@@ -47,16 +48,18 @@ import Carrousel from './componentes/Carousel';
     }
   }*/
 
-const PaginaPrincipal = () => (
-  <Fragment>
-    <Navegacion/>
-    <Carrousel/>
-  </Fragment>
-);
 
-ReactDOM.render(
-    <PaginaPrincipal />,
-    document.getElementById('root')
-);
+const routing = (
+  <Router>
+    <div>
+      <Navegacion/>
+      <Switch>
+        <Route exact path="/" component={App} />
+      </Switch>
+    </div>
+  </Router>
+)
+
+ReactDOM.render(routing, document.getElementById('root'));
 
 serviceWorker.unregister();

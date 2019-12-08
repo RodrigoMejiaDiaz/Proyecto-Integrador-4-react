@@ -19,6 +19,7 @@ import Carousel from 'react-bootstrap/Carousel';
 class Navegacion extends React.Component {
     barraSuperior() {
         return (
+          <div className="sticky-top">
             <Navbar expand="lg" fixed="top" bg="light">
                 <Container>
                     <Navbar.Brand className="text-info text-break">
@@ -45,6 +46,7 @@ class Navegacion extends React.Component {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
+          </div>
           );
     }
     render() {
@@ -115,6 +117,15 @@ const PaginaPrincipal = () =>
     <div>
         <Navegacion/>
         <Carrousel/>
+        <script src="https://unpkg.com/react/umd/react.production.min.js" crossorigin />
+        <script
+          src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"
+          crossorigin
+        />
+        <script
+          src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js"
+          crossorigin
+        />
     </div>;
 
 ReactDOM.render(

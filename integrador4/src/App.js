@@ -1,12 +1,20 @@
-import React from 'react';
-import './App.css';
+import React, { Fragment } from 'react';
+
+import {Container, Col} from 'react-bootstrap';
+
+import Categorias from './componentes/Categorias_App';
 import Carrousel from './componentes/Carousel';
 
 class App extends React.Component {
   render() {
     return (
-      <Carrousel/>
-    )
+      <Fragment>
+        <Carrousel/>
+        <Container>
+          <Categorias/>
+        </Container>
+      </Fragment>
+    );
   }
 }
 

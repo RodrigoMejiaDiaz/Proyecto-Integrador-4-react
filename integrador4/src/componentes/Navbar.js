@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 
 const Navegacion = () => (
-          <div className="sticky-top">
+          <div sticky="top">
             <Navbar expand="lg" fixed="top" bg="light">
                     <Navbar.Brand className="text-info text-break">
                         <img 

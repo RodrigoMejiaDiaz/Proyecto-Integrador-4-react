@@ -34,7 +34,7 @@ class Categorias extends React.Component {
                 })}
                 </div>
             </div>
-            <div className="my-4 d-block d-md-none d-lg-none d-xl-none">
+            <div className="my-4  d-block d-md-none d-lg-none d-xl-none">
                 <div className="card-deck my-4">
                         {this.state.categorias.map(categoria => {
                             return (

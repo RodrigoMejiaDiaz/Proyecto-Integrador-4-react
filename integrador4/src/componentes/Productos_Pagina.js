@@ -4,6 +4,7 @@ import Carta1 from "./CartaLateral1";
 import Carta2 from "./CartaLateral2";
 import Productos from "./Productos";
 import Filter from './Filter';
+import Carro from './Carro';
 
 class Productos_Pagina extends React.Component {
     constructor(props) {
@@ -12,9 +13,11 @@ class Productos_Pagina extends React.Component {
             productos: [],
             recuperado: false,
             filteredProducts: [],
+            cartItems: [],
         };
         this.handleChangeSort = this.handleChangeSort.bind(this);
         this.handleChangeCat = this.handleChangeCat.bind(this);
+        this.handleAddToCart = this.handleAddToCart.bind(this);
     }
 
     componentWillMount(){
@@ -52,6 +55,23 @@ class Productos_Pagina extends React.Component {
             return {filteredProducts: state.productos};
         })
     }
+    handleAddToCart(e, producto){
+        this.setState(state=>{
+            const cartItems = state.cartItems;
+            let productAlreadyInCart = false;
+            cartItems.forEach(item => {
+                if(item.cod_prod === producto.cod_prod){
+                    productAlreadyInCart = true;
+                    item.count++;
+                }
+            });
+            if(!productAlreadyInCart){
+                cartItems.push({...producto, count:1});
+            }
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+            return cartItems;
+        })
+    }
 
     mostrarProductos() {
         return(
@@ -61,6 +81,7 @@ class Productos_Pagina extends React.Component {
                         <div className="col col-3 d-none d-lg-block d-xl-block">
                             <Carta1/>
                             <Carta2/>
+                            <Carro cartItems={this.state.cartItems} handleRemoveFromCart={this.handleRemoveFromCart}/>
                         </div>
                         <div className="col col-9">
                             <div className="row">

@@ -4,15 +4,15 @@ import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 
 const Navegacion = () => (
-          <div sticky="top">
-            <Navbar expand="lg" fixed="top" bg="light">
+          <div  className="sticky-top">
+            <Navbar expand="lg" bg="light">
                     <Navbar.Brand className="text-info text-break">
                         <img 
                             src={Logo}
                             width="70"
                             height="60"
                             className="d-inline-block align-top"
-                            alt="React Bootstrap logo"
+                            alt="Botica IME"
                         />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />

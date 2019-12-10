@@ -15,14 +15,14 @@ const Carrousel = () => (
             </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-        <img className="d-block w-100" style={{height: '600px'}} src={ImgCar2} alt="First slide"/>
+        <img className="d-block w-100" style={{height: '500px'}} src={ImgCar2} alt="First slide"/>
             <Carousel.Caption>
                 <h3>Compras seguras</h3>
                 <p>Tus compras son seguras y rápidas.</p>
             </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-        <img className="d-block w-100" style={{height: '600px'}} src={ImgCar3} alt="First slide"/>
+        <img className="d-block w-100" style={{height: '500px'}} src={ImgCar3} alt="First slide"/>
             <Carousel.Caption>
                 <h3>Compras seguras</h3>
                 <p>Tus compras son seguras y rápidas.</p>

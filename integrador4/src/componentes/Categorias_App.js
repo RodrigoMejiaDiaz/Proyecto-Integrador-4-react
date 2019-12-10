@@ -20,7 +20,7 @@ class Categorias extends React.Component {
                 {this.state.categorias.map(categoria => {
                                 return (
                                     <div className="col mb-4">
-                                        <a className="text-decoration-none" href="#">
+                                        <a className="text-decoration-none" href={`#${categoria.cod_cat}`}>
                                         <div className="card h-100">
                                             <img src={`/categorias_images/${categoria.image}`} className="card-img-top" style={{height: "400px;"}} alt="..."/>
                                                 <div className="card-body">

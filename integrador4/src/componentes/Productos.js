@@ -1,5 +1,9 @@
 import React from 'react';
 
+import DropdownFiltros from "./dropdown-filtros";
+import Carta1 from "./CartaLateral1";
+import Carta2 from "./CartaLateral2";
+
 class Productos extends React.Component {
     constructor(props) {
         super(props);
@@ -11,23 +15,42 @@ class Productos extends React.Component {
 
     mostrarProductos() {
         return(
-            <div className="card-deck">
-                {this.state.productos.map(producto => {
-                    return (
-                        <div className="col col-4">
-                            <div className="card border-0 d-none d-lg-block d-xl-block">
-                                <img src={`/productos_images/${producto.image}`} className="card-img-top" 
-                                alt={`${producto.producto}`}/>
-                                <div className="card-body">
-                                    <h5 className="card-title font-weight-normal">{producto.producto}</h5>
-                                    <p className="card-text"><strong>S/.{producto.precio}</strong></p>
-                                    <a href={`#${producto.cod_prod}`} className="btn btn-success stretched-link">Detalles</a>
+            <div className="container">
+                <div className="col col-12">
+                    <div className="row">
+                        <div className="col col-3 d-none d-lg-block d-xl-block">
+                            <Carta1/>
+                            <Carta2/>
+                        </div>
+                        <div className="col col-9">
+                            <div className="row">
+                                <div class="col">
+                                    <p>Mostrando: 20 resultados</p>
+                                </div>
+                                <div className="col mx-3">
+                                    <DropdownFiltros/>
                                 </div>
                             </div>
+                                <div className="card-deck my-4">
+                                        {this.state.productos.map(producto => {
+                                            return (
+                                                <div className="col col-4">
+                                                    <div className="card border-0 d-none d-lg-block d-xl-block">
+                                                        <img src={`/productos_images/${producto.image}`} className="card-img-top" 
+                                                        alt={`${producto.producto}`}/>
+                                                        <div className="card-body">
+                                                            <h5 className="card-title font-weight-normal">{producto.producto}</h5>
+                                                            <p className="card-text"><strong>S/.{producto.precio}</strong></p>
+                                                            <a href={`#${producto.cod_prod}`} className="btn btn-success stretched-link">Detalles</a>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                        );
+                                    })}
+                                </div>
                         </div>
-                                    
-                    );
-                })}
+                    </div>
+                </div>
             </div>
                                             
         )

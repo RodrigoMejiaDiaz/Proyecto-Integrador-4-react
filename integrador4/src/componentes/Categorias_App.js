@@ -1,7 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {Link} from 'react-router-dom'
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 
 class Categorias extends React.Component {
     constructor(props) {

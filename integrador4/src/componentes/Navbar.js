@@ -6,13 +6,16 @@ const Navegacion = () => (
           <div  className="sticky-top">
             <Navbar expand="lg" bg="light">
                     <Navbar.Brand className="text-info text-break">
-                        <img 
-                            src={`/logo.png`}
-                            width="70"
-                            height="60"
-                            className="d-inline-block align-top"
-                            alt="Botica IME"
-                        />
+                        <Link to="/">
+                            <img 
+                                src={`/logo.png`}
+                                width="70"
+                                height="60"
+                                className="d-inline-block align-top"
+                                alt="Botica IME"
+                            />
+                        </Link>
+                        
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
@@ -27,7 +30,7 @@ const Navegacion = () => (
                             <Button variant="outline-primary">Buscar</Button>
                         </Form>
                         <Link to="/carro" className="mx-2">
-                            <img src={`/shopping-cart.svg`} />
+                            <img src={`/shopping-cart.svg`} alt="Carro"/>
                         </Link>
                     </Navbar.Collapse>
             </Navbar>

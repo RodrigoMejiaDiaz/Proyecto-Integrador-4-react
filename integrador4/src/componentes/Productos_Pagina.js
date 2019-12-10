@@ -18,6 +18,7 @@ class Productos_Pagina extends React.Component {
         this.handleChangeSort = this.handleChangeSort.bind(this);
         this.handleChangeCat = this.handleChangeCat.bind(this);
         this.handleAddToCart = this.handleAddToCart.bind(this);
+        this.handleRemoveFromCart = this.handleRemoveFromCart.bind(this);
     }
 
     componentWillMount(){
@@ -28,8 +29,10 @@ class Productos_Pagina extends React.Component {
                     productos: data,
                     recuperado: true,
                     filteredProducts: data
-                })
-            )
+            }));
+            if(localStorage.getItem('cartItems')){
+                this.setState({cartItems: JSON.parse(localStorage.getItem('cartItems'))});
+            }
     }
     handleChangeSort(e){
         this.setState({sort: e.target.value});
@@ -71,6 +74,13 @@ class Productos_Pagina extends React.Component {
             localStorage.setItem("cartItems", JSON.stringify(cartItems));
             return cartItems;
         })
+    }
+    handleRemoveFromCart(e, item){
+        this.setState(state=>{
+            const cartItems = state.cartItems.filter(elm => elm.cod_prod != item.cod_prod)
+            localStorage.setItem('cartItem', cartItems);
+            return {cartItems};
+        });
     }
 
     mostrarProductos() {

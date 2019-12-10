@@ -11,44 +11,6 @@ import {Container, Col} from 'react-bootstrap';
 import Navegacion from './componentes/Navbar';
 import App from './App';
 
-
-/*class Producto extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        productos: [],
-        recuperado: false,
-      };
-    }
-  
-    mostrarTabla() {
-      return (
-        <div></div>
-      );
-    }
-  
-    componentDidMount() {
-      fetch('http://192.168.244.129:8000/api/productos/')
-      .then((response) => {
-        return response.json()
-      })
-      .then((prod) => {
-        this.setState({
-          productos: prod,
-          recuperado: true,
-        })
-      })
-    }
-  
-    render() {
-      if (this.state.recuperado)
-        return this.mostrarTabla()
-      else
-        return (<div>recuperando datos...</div>)
-    }
-  }*/
-
-
 const routing = (
   <Router>
     <div>

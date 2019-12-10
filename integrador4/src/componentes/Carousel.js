@@ -8,7 +8,7 @@ import {Carousel} from 'react-bootstrap';
 const Carrousel = () => (
     <Carousel>
         <Carousel.Item>
-            <img className="d-block w-100" style={{height: '600px'}} src={ImgCar1} alt="First slide"/>
+            <img className="d-block w-100" style={{height: '500px'}} src={ImgCar1} alt="First slide"/>
             <Carousel.Caption>
                 <h3>Compras seguras</h3>
                 <p>Tus compras son seguras y rápidas.</p>

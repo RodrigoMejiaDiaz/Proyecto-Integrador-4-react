@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import {Link} from 'react-router-dom'
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 
-import quirurjico from './categorias_images/quirurjico.jpg';
-
 class Categorias extends React.Component {
     constructor(props) {
         super(props);
@@ -18,29 +16,21 @@ class Categorias extends React.Component {
         return (
             <div className="my-4">
                 <h1>Categorías</h1>
-                <div>
-                    <table border="1">
-                        <thead>
-                            <tr>
-                                <th>Codigo</th>
-                                <th>Categoria</th>
-                                <th>Descripcion</th>
-                                <th>Imagen</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.state.categorias.map(categoria => {
+                <div class="row row-cols-1 row-cols-md-3">
+                {this.state.categorias.map(categoria => {
                                 return (
-                                    <tr key={categoria.cod_cat}>
-                                        <td>{categoria.cod_cat}</td>
-                                        <td>{categoria.categoria}</td>
-                                        <td>{categoria.descripcion}</td>
-                                        <td><img src={require(categoria.image)}/></td>
-                                    </tr>
+                                    <div className="col mb-4">
+                                        <a className="text-decoration-none" href="#">
+                                        <div className="card h-100">
+                                            <img src={`/categorias_images/${categoria.image}`} className="card-img-top" style={{height: "400px;"}} alt="..."/>
+                                                <div className="card-body">
+                                                    <h5 className="card-title text-center">{categoria.categoria}</h5>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
                                 );
-                            })}
-                        </tbody>
-                    </table>
+                })}
                 </div>
             </div>
         );

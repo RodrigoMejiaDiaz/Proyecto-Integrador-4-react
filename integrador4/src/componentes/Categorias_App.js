@@ -14,7 +14,8 @@ class Categorias extends React.Component {
 
     mostrarCategorias() {
         return (
-            <div className="my-4">
+            <div>
+                <div className="my-4 d-none d-md-block d-lg-block d-xl-block">
                 <h1>Categorías</h1>
                 <div class="row row-cols-1 row-cols-md-3">
                 {this.state.categorias.map(categoria => {
@@ -33,6 +34,30 @@ class Categorias extends React.Component {
                 })}
                 </div>
             </div>
+            <div className="my-4 d-block d-md-none d-lg-none d-xl-none">
+                <div className="card-deck my-4">
+                        {this.state.categorias.map(categoria => {
+                            return (
+                                <div className="card mb-3" style={{maxWidth: "540px;"}}>
+                                    <div className="row no-gutters">
+                                        <div className="col">
+                                            <img src={`/categorias_images/${categoria.image}`} className="card-img" alt={`${categoria.categoria}`} />
+                                        </div>
+                                        <div className="col">
+                                            <div className="card-body">
+                                                <h5 className="card-title">{categoria.categoria}</h5>
+                                                <p className="card-text">{categoria.descripcion}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })}
+
+                    </div>
+            </div>
+            </div>
+            
         );
     }
 

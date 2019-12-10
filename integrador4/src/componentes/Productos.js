@@ -4,7 +4,7 @@ import util from '../util';
 export default class Productos extends Component {
     render() {
         const productItems = this.props.productos.map(producto => (
-            <div className="col col-4">
+            <div className="col col-4" key={producto.cod_prod}>
                 <div className="card border-0 d-none d-lg-block d-xl-block">
                     <img src={`/productos_images/${producto.image}`} className="card-img-top" 
                     alt={`${producto.producto}`}/>

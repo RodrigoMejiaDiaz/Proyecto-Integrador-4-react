@@ -4,6 +4,7 @@ import DropdownFiltros from "./dropdown-filtros";
 import Carta1 from "./CartaLateral1";
 import Carta2 from "./CartaLateral2";
 import Productos from "./Productos";
+import Filter from './Filter';
 
 class Productos_Pagina extends React.Component {
     constructor(props) {
@@ -13,6 +14,7 @@ class Productos_Pagina extends React.Component {
             recuperado: false,
             filteredProducts: [],
         };
+        this.handleChangeSort = this.handleChangeSort.bind(this);
     }
 
     componentWillMount(){
@@ -26,6 +28,20 @@ class Productos_Pagina extends React.Component {
                 })
             )
     }
+    handleChangeSort(e){
+        this.setState({sort: e.target.value});
+        this.listProducts();
+    }
+    listProducts(){
+        this.setState(state => {
+            if(state.sort !== ''){
+                state.productos.sort((a,b)=>(state.sort==='menor')? (a.precio < b.precio?1:-1): (a.precio > b.precio?1:-1) )
+            } else{
+                state.productos.sort((a,b)=> (a.cod_prod< b.cod_prod?1:-1));
+            }
+            return {filteredProducts: state.productos};
+        })
+    }
 
     mostrarProductos() {
         return(
@@ -38,12 +54,9 @@ class Productos_Pagina extends React.Component {
                         </div>
                         <div className="col col-9">
                             <div className="row">
-                                <div class="col">
-                                    <p>Mostrando: 20 resultados</p>
-                                </div>
-                                <div className="col mx-3">
-                                    <DropdownFiltros/>
-                                </div>
+                                <Filter size={this.state.size} sort={this.state.sort} handleChangeSize={this.handleChangeSize}
+                                    handleChangeSort={this.handleChangeSort} count={this.state.filteredProducts.length}/>
+                                <hr/>
                             </div>
                                 <div className="card-deck my-4">
                                     <Productos productos={this.state.filteredProducts} handleAddToCart={this.handleAddToCart}/>

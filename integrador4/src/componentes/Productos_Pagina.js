@@ -1,6 +1,5 @@
 import React from 'react';
 
-import DropdownFiltros from "./dropdown-filtros";
 import Carta1 from "./CartaLateral1";
 import Carta2 from "./CartaLateral2";
 import Productos from "./Productos";
@@ -68,10 +67,9 @@ class Productos_Pagina extends React.Component {
                 </div>
                 <div className="row my-4 d-lg-none d-xl-none">
                     <div class="col">
-                        <p>Mostrando: 20 resultados</p>
-                    </div>
-                    <div className="col mx-3">
-                        <DropdownFiltros/>
+                        <Filter size={this.state.size} sort={this.state.sort} handleChangeSize={this.handleChangeSize}
+                                    handleChangeSort={this.handleChangeSort} count={this.state.filteredProducts.length}/>
+                                <hr/>
                     </div>
                 </div>
                 <div className="card-deck my-4 d-block d-lg-none d-xl-none">

@@ -3,11 +3,11 @@ import React, { Component } from 'react'
 export default class Filter extends Component {
     render() {
         return (
-            <div>
-                <div className="col">
+            <div className="row">
+                <div className="col-auto">
                     {this.props.count} productos encontrados.
                 </div>
-                <div className="col mx-3">
+                <div className="col-auto">
                     <label>
                         Ordenar por
                         <select className="form-control" value={this.props.sort}
@@ -19,7 +19,6 @@ export default class Filter extends Component {
                     </label>
                 </div>
                 <div className="col-md-4"></div>
-
             </div>
         )
     }

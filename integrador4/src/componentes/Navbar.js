@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from "../logo.png";
-import {Link} from 'react-router-dom'
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import {Link} from 'react-router-dom'
 
 const Navegacion = () => (
           <div sticky="top">
@@ -18,15 +18,18 @@ const Navegacion = () => (
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
-                            <Link to="/"><Nav.Link>Home</Nav.Link></Link>
-                            <Nav.Link href="#a">Sobre IME</Nav.Link>
-                            <Nav.Link href="#b">Contacto</Nav.Link>
-                            <Nav.Link href="#c">Ubicanos</Nav.Link>
+                                <Link to="/" className="nav-link">Home</Link>
+                                <Link to="/productos" className="nav-link">Productos</Link>
+                                <Nav.Link href="#b">Contacto</Nav.Link>
+                                <Nav.Link href="#c">Ubicanos</Nav.Link>
                         </Nav>
                         <Form inline>
                             <FormControl type="text" placeholder="Buscar" className="mr-sm-2" />
                             <Button variant="outline-primary">Buscar</Button>
                         </Form>
+                        <Link to="/carro" className="mx-2">
+                            <img src={`/shopping-cart.svg`} />
+                        </Link>
                     </Navbar.Collapse>
             </Navbar>
           </div>

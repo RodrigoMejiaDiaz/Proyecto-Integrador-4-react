@@ -22,6 +22,9 @@ export default class Carro extends Component {
                     Total: {util.formatCurrency(cartItems.reduce((a, c) => a + c.precio*c.count, 0 ))}
                 </div>
                 }
+                <button className="btn btn-primary" onClick={()=>alert("Falta implementarse un checkout...")}>
+                    Checkout
+                </button>
             </div>
         )
     }

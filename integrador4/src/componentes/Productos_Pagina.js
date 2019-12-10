@@ -77,8 +77,8 @@ class Productos_Pagina extends React.Component {
     }
     handleRemoveFromCart(e, item){
         this.setState(state=>{
-            const cartItems = state.cartItems.filter(elm => elm.cod_prod != item.cod_prod)
-            localStorage.setItem('cartItem', cartItems);
+            const cartItems = state.cartItems.filter(elm => elm.cod_prod !== item.cod_prod)
+            localStorage.setItem('cartItems', cartItems);
             return {cartItems};
         });
     }

@@ -1,5 +1,4 @@
 import React from 'react';
-import Logo from "../logo.png";
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 
@@ -8,7 +7,7 @@ const Navegacion = () => (
             <Navbar expand="lg" bg="light">
                     <Navbar.Brand className="text-info text-break">
                         <img 
-                            src={Logo}
+                            src={`/logo.png`}
                             width="70"
                             height="60"
                             className="d-inline-block align-top"

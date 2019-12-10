@@ -1,4 +1,5 @@
-import React, {Component, Fragment} from 'react'
+import React, {Component, Fragment} from 'react';
+import util from '../util';
 
 export default class Productos extends Component {
     render() {
@@ -9,8 +10,8 @@ export default class Productos extends Component {
                     alt={`${producto.producto}`}/>
                     <div className="card-body">
                         <h5 className="card-title font-weight-normal">{producto.producto}</h5>
-                        <p className="card-text"><strong>S/.{producto.precio}</strong></p>
-                        <a href={`#${producto.cod_prod}`} onClick={this.props.handleAddToCart} className="btn btn-success stretched-link">Detalles</a>
+                        <p className="card-text"><strong>{util.formatCurrency(producto.precio)}</strong></p>
+                        <a href={`#${producto.cod_prod}`} onClick={(e)=>this.props.handleAddToCart(e, producto)} className="btn btn-success stretched-link">Detalles</a>
                     </div>
                 </div>
             </div>

@@ -16,7 +16,7 @@ class Productos extends React.Component {
     mostrarProductos() {
         return(
             <div className="container">
-                <div className="col col-12">
+                <div className="col col-12 d-none d-lg-block d-xl-block">
                     <div className="row">
                         <div className="col col-3 d-none d-lg-block d-xl-block">
                             <Carta1/>
@@ -51,9 +51,38 @@ class Productos extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
-                                            
-        )
+                <div className="row my-4 d-lg-none d-xl-none">
+                    <div class="col">
+                        <p>Mostrando: 20 resultados</p>
+                    </div>
+                    <div className="col mx-3">
+                        <DropdownFiltros/>
+                    </div>
+                </div>
+                <div className="card-deck my-4 d-block d-lg-none d-xl-none">
+                    {this.state.productos.map(producto => {
+                        return (
+                            <div className="card mb-3" style={{maxWidth: "540px;"}}>
+                                <div className="row no-gutters">
+                                    <div className="col">
+                                        <img src={`/productos_images/${producto.image}`} className="card-img" alt={`${producto.producto}`} />
+                                    </div>
+                                    <div className="col">
+                                        <div className="card-body">
+                                            <h5 className="card-title">{producto.producto}</h5>
+                                            <p className="card-text">{producto.descripcion}</p>
+                                            <p className="card-text"><strong>S/.{producto.precio}</strong></p>
+                                            <a href={`#${producto.cod_prod}`} className="btn btn-success stretched-link">Detalles</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    })}
+
+                </div>
+            </div>                               
+        );
     }
 
     componentDidMount() {

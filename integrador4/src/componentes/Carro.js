@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
+import util from '../util';
 
 export default class Carro extends Component {
     render() {
@@ -12,11 +14,12 @@ export default class Carro extends Component {
                         {cartItems.map(item =>
                             <li>
                                 <b>{item.producto}</b>
-                                X {item.count}
+                                X {item.count} = {item.precio * item.count}
                                 <button className="btn btn-danger"
                                 onClick={(e) =>this.props.handleRemoveFromCart(e, item)}>X</button>
                             </li>)}
                     </ul>
+                    Total: {util.formatCurrency(cartItems.reduce((a, c) => a + c.precio*c.count, 0 ))}
                 </div>
                 }
             </div>

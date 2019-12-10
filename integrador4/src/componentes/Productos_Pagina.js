@@ -35,7 +35,9 @@ class Productos_Pagina extends React.Component {
     listProducts(){
         this.setState(state => {
             if(state.sort !== ''){
-                state.productos.sort((a,b)=>(state.sort==='menor')? (a.precio < b.precio?1:-1): (a.precio > b.precio?1:-1) )
+                state.productos.sort((a,b)=>(state.sort==='menor')? 
+                (a.precio > b.precio?1:-1)
+                : (a.precio < b.precio?1:-1) )
             } else{
                 state.productos.sort((a,b)=> (a.cod_prod< b.cod_prod?1:-1));
             }

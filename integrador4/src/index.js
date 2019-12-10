@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import Navegacion from './componentes/Navbar';
-import Productos from './componentes/Productos';
+import Productos from './componentes/Productos_Pagina';
 import App from './App';
 
 const routing = (

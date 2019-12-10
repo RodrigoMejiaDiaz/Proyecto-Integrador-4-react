@@ -11,13 +11,6 @@ class App extends React.Component {
     super(props);
     this.state = { productos:[] };
   }
-  componentWillMount(){
-    fetch("http://localhost:8000/productos").then(res => res.json())
-    .then(data => this.setState({
-      productos: data,
-    }));
-  }
-
 
   render() {
     return (

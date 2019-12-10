@@ -14,6 +14,7 @@ class Productos_Pagina extends React.Component {
             filteredProducts: [],
         };
         this.handleChangeSort = this.handleChangeSort.bind(this);
+        this.handleChangeCat = this.handleChangeCat.bind(this);
     }
 
     componentWillMount(){
@@ -31,6 +32,10 @@ class Productos_Pagina extends React.Component {
         this.setState({sort: e.target.value});
         this.listProducts();
     }
+    handleChangeCat(e){
+        this.setState({cat: e.target.value});
+        this.listProducts();
+    }
     listProducts(){
         this.setState(state => {
             if(state.sort !== ''){
@@ -40,6 +45,10 @@ class Productos_Pagina extends React.Component {
             } else{
                 state.productos.sort((a,b)=> (a.cod_prod< b.cod_prod?1:-1));
             }
+            /*if(state.cat!==''){
+                return { filteredProducts: state.productos.filter(a=>
+                    a.availableCats.indexOf(state.cat.toString)>=0)}
+            }*/
             return {filteredProducts: state.productos};
         })
     }
@@ -55,7 +64,7 @@ class Productos_Pagina extends React.Component {
                         </div>
                         <div className="col col-9">
                             <div className="row">
-                                <Filter size={this.state.size} sort={this.state.sort} handleChangeSize={this.handleChangeSize}
+                                <Filter size={this.state.size} sort={this.state.sort} handleChangeCat={this.handleChangeCat}
                                     handleChangeSort={this.handleChangeSort} count={this.state.filteredProducts.length}/>
                                 <hr/>
                             </div>
@@ -67,7 +76,7 @@ class Productos_Pagina extends React.Component {
                 </div>
                 <div className="row my-4 d-lg-none d-xl-none">
                     <div class="col">
-                        <Filter size={this.state.size} sort={this.state.sort} handleChangeSize={this.handleChangeSize}
+                        <Filter size={this.state.size} sort={this.state.sort} handleChangeCat={this.handleChangeCat}
                                     handleChangeSort={this.handleChangeSort} count={this.state.filteredProducts.length}/>
                                 <hr/>
                     </div>

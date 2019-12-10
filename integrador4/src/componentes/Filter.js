@@ -18,7 +18,22 @@ export default class Filter extends Component {
                         </select>
                     </label>
                 </div>
-                <div className="col-md-4"></div>
+                <div className="col-md-4">
+                    <label>
+                        Filtrar categoría
+                        <select className="form-control" value={this.props.cat}
+                        onChange={this.props.handleChangeCat}>
+                            <option value="">Seleccionar</option>
+                            <option value="1">Quirúrjico</option>
+                            <option value="2">Insumo Odontológico</option>
+                            <option value="3">Equipo Médico</option>
+                            <option value="4">Ayuda Funcional</option>
+                            <option value="5">Material de Curación</option>
+                            <option value="6">Agente de Diagnóstico</option>
+
+                        </select>
+                    </label> 
+                </div>
             </div>
         )
     }

@@ -18,7 +18,7 @@ const Navegacion = () => (
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link><Link to="/">Home</Link></Nav.Link>
+                            <Link to="/"><Nav.Link>Home</Nav.Link></Link>
                             <Nav.Link href="#a">Sobre IME</Nav.Link>
                             <Nav.Link href="#b">Contacto</Nav.Link>
                             <Nav.Link href="#c">Ubicanos</Nav.Link>

@@ -26,7 +26,7 @@ class Productos_Pagina extends React.Component {
 
     componentWillMount(){
         if (localStorage.getItem('cartItems')) {
-            this.setState({ cartItems: localStorage.getItem('cartItems') });
+            this.setState({ cartItems: JSON.parse(localStorage.getItem('cartItems')) });
           }
     }
     handleChangeSort(e){

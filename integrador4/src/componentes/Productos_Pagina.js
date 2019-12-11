@@ -6,6 +6,9 @@ import Productos from "./Productos";
 import Filter from './Filter';
 import Carro from './Carro';
 
+import {Provider} from 'react-redux';
+import store from '../store';
+
 class Productos_Pagina extends React.Component {
     constructor(props) {
         super(props);
@@ -85,6 +88,7 @@ class Productos_Pagina extends React.Component {
 
     mostrarProductos() {
         return(
+            <Provider store={store}>
             <div className="container">
                 <div className="col col-12 d-none d-lg-block d-xl-block">
                     <div className="row">
@@ -134,7 +138,8 @@ class Productos_Pagina extends React.Component {
                     })}
 
                 </div>
-            </div>                               
+            </div>  
+            </Provider>                             
         );
     }
 

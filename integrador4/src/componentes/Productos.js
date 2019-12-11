@@ -4,7 +4,7 @@ import {fetchProducts} from '../actions/productActions';
 import { connect } from 'react-redux';
 
 class Productos extends Component {
-    componentWillMount(){
+    componentDidMount(){
         this.props.fetchProducts()
     }
 

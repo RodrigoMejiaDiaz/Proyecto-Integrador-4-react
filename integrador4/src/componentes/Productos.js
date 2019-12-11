@@ -21,8 +21,7 @@ class Productos extends Component {
                     </div>
                 </div>
             </div>
-        )
-        )
+        ))
         return (
             <Fragment>
                 {productItems}

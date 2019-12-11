@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import Navegacion from './componentes/Navbar';
-import Productos_Pagina from './componentes/Productos_Pagina';
+import Productos from './componentes/Productos_Pagina';
 import App from './App';
 
 const routing = (
@@ -15,7 +15,7 @@ const routing = (
       <Navegacion/>
       <Switch>
         <Route exact path="/" component={App} />
-        <Route path="/productos" component={Productos_Pagina} />
+        <Route path="/productos" component={Productos} />
       </Switch>
     </body>
   </BrowserRouter>

@@ -13,8 +13,8 @@ export default class Filter extends Component {
                         <select className="form-control" value={this.props.sort}
                         onChange={this.props.handleChangeSort}>
                             <option value="">Seleccionar</option>
-                            <option value="menor">Menor a Mayor</option>
-                            <option value="mayor">Mayor a Menor</option>
+                            <option value="menor">Precio: Menor a Mayor</option>
+                            <option value="mayor">Precio: Mayor a Menor</option>
                         </select>
                     </label>
                 </div>

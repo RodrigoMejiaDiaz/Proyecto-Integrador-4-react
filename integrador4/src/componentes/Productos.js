@@ -1,7 +1,13 @@
 import React, {Component, Fragment} from 'react';
 import util from '../util';
+import {fetchProducts} from '../actions/productActions';
+import { connect } from 'react-redux';
 
-export default class Productos extends Component {
+class Productos extends Component {
+    componentWillMount(){
+        this.props.fetchProducts()
+    }
+
     render() {
         const productItems = this.props.productos.map(producto => (
             <div className="col col-4" key={producto.cod_prod}>
@@ -24,3 +30,6 @@ export default class Productos extends Component {
         )
     }
 }
+const mapStateToProps = state => ({productos: state.productos.items});
+
+export default connect(mapStateToProps, {fetchProducts})(Productos);

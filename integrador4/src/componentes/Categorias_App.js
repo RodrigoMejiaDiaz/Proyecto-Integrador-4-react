@@ -14,13 +14,13 @@ class Categorias extends React.Component {
             <div>
                 <div className="my-4 d-none d-md-block d-lg-block d-xl-block">
                 <h1>Categorías</h1>
-                <div class="row row-cols-1 row-cols-md-3">
+                <div className="row row-cols-1 row-cols-md-3">
                 {this.state.categorias.map(categoria => {
                                 return (
-                                    <div className="col mb-4">
+                                    <div className="col mb-4" key={categoria.cod_cat}>
                                         <a className="text-decoration-none" href={`#${categoria.cod_cat}`}>
                                         <div className="card h-100">
-                                            <img src={`/categorias_images/${categoria.image}`} className="card-img-top" style={{height: "400px;"}} alt="..."/>
+                                            <img src={`/categorias_images/${categoria.image}`} className="card-img-top" style={{height: "400px"}} alt="..."/>
                                                 <div className="card-body">
                                                     <h5 className="card-title text-center">{categoria.categoria}</h5>
                                                 </div>
@@ -35,7 +35,7 @@ class Categorias extends React.Component {
                 <div className="card-deck my-4">
                         {this.state.categorias.map(categoria => {
                             return (
-                                <div className="card mb-3" style={{maxWidth: "540px;"}}>
+                                <div className="card mb-3" style={{maxWidth: "540px"}}>
                                     <div className="row no-gutters">
                                         <div className="col">
                                             <img src={`/categorias_images/${categoria.image}`} className="card-img" alt={`${categoria.categoria}`} />

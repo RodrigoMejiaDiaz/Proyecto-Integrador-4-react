@@ -25,17 +25,9 @@ class Productos_Pagina extends React.Component {
     }
 
     componentWillMount(){
-        fetch("http://192.168.244.129:8000/api/productos/")
-            .then(res => res.json())
-            .then(data => 
-                this.setState({
-                    productos: data,
-                    recuperado: true,
-                    filteredProducts: data
-            }));
-            if(localStorage.getItem('cartItems')){
-                this.setState({cartItems: JSON.parse(localStorage.getItem('cartItems'))});
-            }
+        if (localStorage.getItem('cartItems')) {
+            this.setState({ cartItems: localStorage.getItem('cartItems') });
+          }
     }
     handleChangeSort(e){
         this.setState({sort: e.target.value});
@@ -110,7 +102,7 @@ class Productos_Pagina extends React.Component {
                     </div>
                 </div>
                 <div className="row my-4 d-lg-none d-xl-none">
-                    <div class="col">
+                    <div className="col">
                         <Filter size={this.state.size} sort={this.state.sort} handleChangeCat={this.handleChangeCat}
                                     handleChangeSort={this.handleChangeSort} count={this.state.filteredProducts.length}/>
                                 <hr/>

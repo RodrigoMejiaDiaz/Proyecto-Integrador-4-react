@@ -1,12 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import util from '../util';
-import {fetchProducts} from '../actions/productActions';
-import { connect } from 'react-redux';
 
-class Productos extends Component {
-    componentDidMount(){
-        this.props.fetchProducts()
-    }
+export default class Productos extends Component {
 
     render() {
         const productItems = this.props.productos.map(producto => (
@@ -30,6 +25,3 @@ class Productos extends Component {
         )
     }
 }
-const mapStateToProps = state => ({productos: state.productos.items});
-
-export default connect(mapStateToProps, {fetchProducts})(Productos);

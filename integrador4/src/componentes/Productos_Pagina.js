@@ -6,9 +6,6 @@ import Productos from "./Productos";
 import Filter from './Filter';
 import Carro from './Carro';
 
-import {Provider} from 'react-redux';
-import store from '../store';
-
 class Productos_Pagina extends React.Component {
     constructor(props) {
         super(props);
@@ -24,9 +21,15 @@ class Productos_Pagina extends React.Component {
         this.handleRemoveFromCart = this.handleRemoveFromCart.bind(this);
     }
 
-    componentDidMount(){
+    componentWillMount(){
+        fetch("http://192.168.244.129:8000/productos").then(res => res.json())
+        .then(data => this.setState({
+            productos: data,
+            filteredProducts: data,
+            recuperado: true,
+        }));
         if (localStorage.getItem('cartItems')) {
-            this.setState({ cartItems: JSON.parse(localStorage.getItem('cartItems')) });
+            this.setState({ cartItems: (localStorage.getItem('cartItems')) });
           }
     }
     handleChangeSort(e){
@@ -80,7 +83,6 @@ class Productos_Pagina extends React.Component {
 
     mostrarProductos() {
         return(
-            <Provider store={store}>
             <div className="container">
                 <div className="col col-12 d-none d-lg-block d-xl-block">
                     <div className="row">
@@ -131,7 +133,6 @@ class Productos_Pagina extends React.Component {
 
                 </div>
             </div>  
-            </Provider>                             
         );
     }
 
